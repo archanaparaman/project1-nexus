@@ -83,41 +83,18 @@
     </div>
 
     <script>
-        function validateForm() {
-  var username = document.getElementById('username').value;
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+        function toggleForm() {
+            var loginForm = document.getElementById('loginForm');
+            var signupForm = document.getElementById('signupForm');
 
-  var usernameError = document.getElementById('usernameError');
-  var emailError = document.getElementById('emailError');
-  var passwordError = document.getElementById('passwordError');
-
-  var isValid = true;
-
-  // Simple validation, you can add more complex checks as needed
-  if (username.trim() === '') {
-    usernameError.textContent = 'Username is required';
-    isValid = false;
-  } else {
-    usernameError.textContent = '';
-  }
-
-  if (email.trim() === '') {
-    emailError.textContent = 'Email is required';
-    isValid = false;
-  } else {
-    emailError.textContent = '';
-  }
-
-  if (password.trim() === '') {
-    passwordError.textContent = 'Password is required';
-    isValid = false;
-  } else {
-    passwordError.textContent = '';
-  }
-
-  return isValid;
-}
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
     </script>
 
 </body>
